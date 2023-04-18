@@ -7,7 +7,7 @@ select c.category_id as category, count(f.film_id) as 'number of films' from fil
 join film_category c 
 on c.film_id = f.film_id
 GROUP BY category
-ORDER BY 'number of films' DESC;
+ORDER BY `number of films` DESC;
 
 -- 2. Display the total amount rung up by each staff member in August of 2005.
 
@@ -39,7 +39,7 @@ count(*) as Total_Rentals
 FROM rental as r
 INNER JOIN customer AS c 
 on r.customer_id = c.customer_id
-GROUP BY c.customer_id, 'Most Active Customer'
+GROUP BY c.customer_id, `Most Active Customer`
 ORDER BY Total_Rentals DESC 
 LIMIT 1;
 
@@ -59,7 +59,7 @@ FROM film f
 INNER JOIN film_actor fa
 ON f.film_id = fa.film_id
 GROUP BY title
-ORDER BY 'number of actors' DESC;
+ORDER BY `number of actors` DESC;
 
 -- 7. Using the tables payment and customer and the JOIN command, 
 -- list the total paid by each customer. List the customers alphabetically by last name.
@@ -79,4 +79,4 @@ FROM film_category fc
 INNER JOIN film f
 ON fc.film_id = f.film_id
 GROUP BY category_id
-ORDER BY 'films per category';
+ORDER BY `films per category`;
